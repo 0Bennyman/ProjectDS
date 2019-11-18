@@ -59,7 +59,7 @@ public class PlayerController : MonoBehaviour
             anim.SetBool("ClimbLadder", true);
         }
 
-        if (other.tag == "LadderTop" && anim.GetBool("ClimbLadder"))
+        if (other.tag == "LadderTop" && anim.GetBool("ClimbLadder"))    
         {
             //anim.SetBool("ClimbOffTop",true); //Use for detailed getting on and off
             anim.SetBool("ClimbLadder", false);
@@ -90,7 +90,7 @@ public class PlayerController : MonoBehaviour
     IEnumerator FinishLadderClimb(GameObject point)
     {
         yield return new WaitForSeconds(.03f);
-        transform.position = Vector3.MoveTowards(transform.position,point.transform.position,2.8f*Time.deltaTime);
+        //transform.position = Vector3.MoveTowards(transform.position,point.transform.position,2.8f*Time.deltaTime); REMOVEDe
         ladderPos = point;
 
         if (Vector3.Distance(transform.position, point.transform.position) > .1f)

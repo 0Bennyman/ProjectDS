@@ -66,11 +66,36 @@ public class AnimationEvents : MonoBehaviour
         Destroy(gameObject);
     }
 
+    public void Lock()
+    {
+        if (enemy)
+        {
+            //anim.SetBool("Locked", true);
+            //anim.SetBool("Running", false);
+        }
+    }
+
+    public void Casted()
+    {
+        enemy.castLength = 3;
+        anim.SetBool("Casting", false);
+    }
+
     public void ClearFlags()
     {
+        if (enemy)
+        {
+            anim.SetBool("Locked", false);
+            anim.SetBool("Idle", true);
+            anim.SetBool("Locked", false);
+            anim.SetBool("Running", false);
+        }
+
         anim.SetBool("Hit", false);
         anim.SetBool("Attack", false);
         anim.SetBool("Roll", false);
+        anim.SetBool("Kick", false);
+
         if (control)
         {
             control.lockMovement = false;
