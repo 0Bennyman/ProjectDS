@@ -124,7 +124,7 @@ public class PlayerController : MonoBehaviour
             return;
         }
 
-        if (rb.velocity.magnitude > .01 && rb.velocity.y>-.5f&&rb.velocity.y<.5f)
+        if (rb.velocity.magnitude > .01 && rb.velocity.y>-.5f&&rb.velocity.y<.5f && anim.GetBool("Moving"))
         {
             //transform.rotation = Quaternion.LookRotation(rb.velocity, Vector3.up);
             var q = Quaternion.LookRotation(rb.velocity, Vector3.up);
